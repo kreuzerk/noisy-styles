@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "postbuild": "cpx projects/noisy-styles/src/main.css dist/noisy-styles",
+    "build": "ng build && npm run build:binaries && npm run build:styles",
+    "build:binaries": "copyfiles ./bin/shake-it.js / dist/noisy-styles",
+    "build:styles": "cpx projects/noisy-styles/src/main.css dist/noisy-styles",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "bin": {
+    "shake-it": "./bin/shake-it.js"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +23,8 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "postcss": "^8.4.31",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -28,6 +34,7 @@
     "@angular/cli": "^16.2.5",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "copyfiles": "^2.4.1",
     "cpx": "^1.5.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
