@@ -1,5 +1,5 @@
 /* Buttons */
-.button {
+.ns-button {
   display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
@@ -10,7 +10,7 @@
 }
 
 /* Cards */
-.card {
+.ns-card {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
@@ -18,38 +18,38 @@
 }
 
 /* Footer */
-.footer {
+.ns-footer {
   background-color: #333;
   color: #fff;
   padding: 20px;
 }
 
 /* Header */
-.header {
+.ns-header {
   background-color: #333;
   color: #fff;
   padding: 20px;
 }
 
 /* Images */
-.img {
+.ns-img {
   max-width: 100%;
   height: auto;
 }
 
 /* Tables */
-.table {
+.ns-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.table th, .table td {
+.ns-table th, .ns-table td {
   border: 1px solid #ccc;
   padding: 10px;
 }
 
 /* Chips */
-.chip {
+.ns-chip {
   display: inline-block;
   background-color: #007bff;
   color: #fff;
