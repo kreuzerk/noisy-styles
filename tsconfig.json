@@ -15,6 +15,11 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "paths": {
+      "noisy-styles": [
+        "dist/noisy-styles"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",

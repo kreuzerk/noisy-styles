@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "noisy-styles": {
+      "projectType": "library",
+      "root": "projects/noisy-styles",
+      "sourceRoot": "projects/noisy-styles/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/noisy-styles/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/noisy-styles/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/noisy-styles/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/noisy-styles/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
