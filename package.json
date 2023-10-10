@@ -1,17 +1,17 @@
 {
   "name": "noisy-styles",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build && npm run build:binaries && npm run build:styles",
-    "build:binaries": "copyfiles ./bin/shake-it.js / dist/noisy-styles",
+    "build:binaries": "copyfiles ./bin/shake-it.mjs / dist/noisy-styles",
     "build:styles": "cpx projects/noisy-styles/src/main.css dist/noisy-styles",
+    "build-and-install-in-consumer": "npm run build && npm run build:package && npm run copy-to-consumer && cd ../noisy-styles-consumer && npm i noisy-styles-0.0.3.tgz",
+    "build:package": "cd dist/noisy-styles && npm pack",
+    "copy-to-consumer": "cpx dist/noisy-styles/noisy-styles-0.0.3.tgz ../noisy-styles-consumer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
-  },
-  "bin": {
-    "shake-it": "./bin/shake-it.js"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "@angular/router": "^16.2.0",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "postcss": "^8.4.31",
+    "purgecss": "^5.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

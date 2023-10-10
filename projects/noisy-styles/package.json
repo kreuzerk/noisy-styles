@@ -1,12 +1,24 @@
 {
   "name": "noisy-styles",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0"
+    "@angular/core": "^16.2.0",
+    "purgecss": "^5.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "bin": {
+    "shake-it": "./bin/shake-it.mjs"
+  },
+  "sideEffects": false,
+  "exports": {
+    "./main": {
+      "sass": "./main.css"
+    },
+    "./main.css": {
+      "css": "./main.css"
+    }
+  }
 }
